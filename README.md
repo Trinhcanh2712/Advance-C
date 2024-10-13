@@ -141,7 +141,7 @@ return 0;
 
  setjmp(jmp_buf env): Lưu trữ trạng thái của chương trình (bao gồm con trỏ ngăn xếp và các thanh ghi) tại vị trí gọi setjmp() và trả về giá trị 0 khi gọi 
  lần đầu.
- longjmp(jmp_buf env, int val): Chuyển chương trình trở về điểm đã gọi setjmp() trước đó và setjmp() sẽ trả về giá trị val (khác 0).
+ longjmp(jmp_buf, int val): Chuyển chương trình trở về điểm đã gọi setjmp() trước đó và setjmp() sẽ trả về giá trị val (khác 0).
  Cấu trúc của setjmp() và longjmp():
  jmp_buf: Là một kiểu dữ liệu đặc biệt để lưu trạng thái của chương trình.
  val: Giá trị mà setjmp() trả về sau khi longjmp() được gọi.
