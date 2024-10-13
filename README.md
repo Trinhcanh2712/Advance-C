@@ -145,3 +145,34 @@ return 0;
  Cấu trúc của setjmp() và longjmp():
  jmp_buf: Là một kiểu dữ liệu đặc biệt để lưu trạng thái của chương trình.
  val: Giá trị mà setjmp() trả về sau khi longjmp() được gọi.
+
+## BÀI 3: EXTERN - STATIC - VOLATILE - REGISTER
+### Extern
+•	Được sử dụng để tránh việc tốn bộ nhớ khi gọi nhiều file. Giúp biến hoặc hàm được định nghĩa và sử dụng ở vị trí khác.
+•	Muốn khai báo extern thì các biến, hàm phải ở toàn cuc.
+•	Giúp cho các file trong cùng thư mục có thể chia sẽ các biến, các hàm cho lẫn nhau.
+•	Không sử dụng include phải liên kết file
+### Static
+#### a. Biến Local Static
+Khái niệm: Biến được khai báo với từ khóa static bên trong một hàm.
+Phạm vi: Phạm vi chỉ trong hàm mà nó được khai báo.
+Thời gian sống: Biến có thời gian sống suốt chương trình, tức là nó giữ giá trị giữa các lần gọi hàm.
+#### b. Biến Global Static
+Khái niệm: Biến được khai báo với từ khóa static bên ngoài mọi hàm (global).
+Phạm vi: Phạm vi chỉ trong file nơi nó được khai báo. Không thể truy cập từ file khác.
+Thời gian sống: Suốt chương trình.
+#### c. Hàm Static
+Khái niệm: Hàm được khai báo với từ khóa static.
+Phạm vi: Chỉ có thể được gọi từ file nơi nó được khai báo. Không thể gọi từ file khác.
+Thời gian sống: Suốt chương trình, nhưng phạm vi chỉ trong file.
+#### d. Tính chất của static
+Giữ giá trị: Biến static giữ giá trị giữa các lần gọi hàm.
+Ẩn dấu: Biến và hàm static không thể được truy cập từ file khác, giúp giảm khả năng xung đột tên.
+Tối ưu hóa: Sử dụng static giúp tối ưu hóa bộ nhớ, nhất là trong trường hợp biến không cần thiết phải có phạm vi toàn cục.
+#### e. Ứng dụng của static
+Đếm số lần gọi hàm: Biến static local có thể được sử dụng để đếm số lần gọi hàm.
+Quản lý trạng thái: Giữ trạng thái trong các hàm mà không cần sử dụng biến toàn cục.
+Tổ chức mã: Giúp tổ chức mã nguồn tốt hơn bằng cách hạn chế phạm vi của biến và hàm.
+#### f. Lưu ý
+Không khởi tạo lại: Biến static chỉ được khởi tạo một lần, lần đầu tiên nó được sử dụng.
+Tính rõ ràng: Sử dụng static có thể làm cho mã nguồn khó hiểu hơn nếu không được sử dụng đúng cách.
