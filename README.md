@@ -1,5 +1,5 @@
 # Advance-C
-## Pointer
+## BÀI 1 Pointer
 ### Pointer
 Là 1 biến chứa địa chỉ của 1 biến khác hay 1 hàm. Kích thước của con trỏ phụ thuộc vào kiến trúc máy tính và trình biên dịch. Ví dụ: #include <stdio.h>
 
