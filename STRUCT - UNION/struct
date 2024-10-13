@@ -1,1 +1,13 @@
+#include <stdio.h>
+
+struct MyStruct {
+    char c;      // 1 byte
+    int i;       // 4 bytes
+    double d;    // 8 bytes
+};
+
+int main() {
+    printf("Size of struct MyStruct: %lu bytes\n", sizeof(struct MyStruct));
+    return 0;
+}
 
