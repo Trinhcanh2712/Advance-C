@@ -147,12 +147,12 @@ return 0;
  val: Giá trị mà setjmp() trả về sau khi longjmp() được gọi.
 
 ## BÀI 3: EXTERN - STATIC - VOLATILE - REGISTER
-### Extern
+### 1.Extern
 •	Được sử dụng để tránh việc tốn bộ nhớ khi gọi nhiều file. Giúp biến hoặc hàm được định nghĩa và sử dụng ở vị trí khác.
 •	Muốn khai báo extern thì các biến, hàm phải ở toàn cuc.
 •	Giúp cho các file trong cùng thư mục có thể chia sẽ các biến, các hàm cho lẫn nhau.
 •	Không sử dụng include phải liên kết file
-### Static
+### 2.Static
 #### a. Biến Local Static
 Khái niệm: Biến được khai báo với từ khóa static bên trong một hàm.
 Phạm vi: Phạm vi chỉ trong hàm mà nó được khai báo.
@@ -176,3 +176,17 @@ Tổ chức mã: Giúp tổ chức mã nguồn tốt hơn bằng cách hạn ch�
 #### f. Lưu ý
 Không khởi tạo lại: Biến static chỉ được khởi tạo một lần, lần đầu tiên nó được sử dụng.
 Tính rõ ràng: Sử dụng static có thể làm cho mã nguồn khó hiểu hơn nếu không được sử dụng đúng cách.
+### 3.Volatile
+#### a. Khái Niệm
+Từ khóa volatile được sử dụng để chỉ ra rằng giá trị của biến có thể thay đổi mà không có sự can thiệp từ chương trình hiện tại, ví dụ như từ phần cứng hoặc các luồng khác.
+#### b. Khi nào sử dụng
+Biến có thể bị thay đổi bởi:
+Phần cứng: Các biến lưu trữ trạng thái của thiết bị ngoại vi.
+Các luồng khác: Khi nhiều luồng hoặc quá trình cùng truy cập vào một biến.
+Hệ điều hành: Trong các trình điều khiển hoặc mã nhúng, biến có thể thay đổi bởi các interrupt.
+### 4.Register
+#### a. Khái Niệm
+Từ khóa register được sử dụng để chỉ ra rằng biến nên được lưu trữ trong thanh ghi CPU thay vì bộ nhớ chính. Điều này giúp tăng tốc độ truy cập và hiệu suất của chương trình.
+#### b. Lưu ý khi sử dụng
+Số lượng hạn chế: Không phải tất cả các biến đều có thể được lưu trữ trong thanh ghi, vì số lượng thanh ghi trên CPU là có hạn.
+Không thể tham chiếu địa chỉ: Bạn không thể lấy địa chỉ của một biến được khai báo với từ khóa register.
