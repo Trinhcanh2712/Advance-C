@@ -127,3 +127,21 @@ printf("dereference ptr2 second time: %d\n", **ptr2);
 
 return 0;
 } Kết quả: address of value: 0000000E731FFB04 value of ptr1: 0000000E731FFB04 address of ptr1: 0000000E731FFAF8 value of ptr2: 0000000E731FFAF8 dereference ptr2 first time: 0000000E731FFB04 dereference ptr2 second time: 42
+
+## BÀI 2: GOTO - SETJMP.H
+### goto
+ Là một lệnh điều khiển cho phép chuyển trực tiếp đến một nhãn (label) cụ thể trong chương trình. 
+ Cú pháp của goto:
+ goto label;
+ ...
+ label:
+    // Code to execute
+ ### setjmp.h   
+ Thư viện setjmp.h cung cấp hai hàm: setjmp() và longjmp(), được sử dụng để quản lý luồng chương trình trong trường hợp ngoại lệ (exception handling).
+
+ setjmp(jmp_buf env): Lưu trữ trạng thái của chương trình (bao gồm con trỏ ngăn xếp và các thanh ghi) tại vị trí gọi setjmp() và trả về giá trị 0 khi gọi 
+ lần đầu.
+ longjmp(jmp_buf env, int val): Chuyển chương trình trở về điểm đã gọi setjmp() trước đó và setjmp() sẽ trả về giá trị val (khác 0).
+ Cấu trúc của setjmp() và longjmp():
+ jmp_buf: Là một kiểu dữ liệu đặc biệt để lưu trạng thái của chương trình.
+ val: Giá trị mà setjmp() trả về sau khi longjmp() được gọi.
