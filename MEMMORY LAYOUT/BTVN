@@ -1,5 +1,5 @@
 # So sánh malloc, realloc, calloc giống và khác nhau
-Giống nhau:
+## Giống nhau:
 1.	Quản lý bộ nhớ động:
 o	Cả ba hàm đều được sử dụng để cấp phát hoặc điều chỉnh bộ nhớ động trong ngôn ngữ lập trình C.
 o	Đều trả về một con trỏ đến vùng nhớ được cấp phát, hoặc NULL nếu việc cấp phát không thành công.
@@ -8,16 +8,8 @@ o	Bộ nhớ cấp phát bởi malloc, calloc, và realloc cần được giải
 3.	Cần ép kiểu con trỏ:
 o	Hàm trả về một con trỏ kiểu void*, do đó cần ép kiểu về loại dữ liệu mong muốn (ví dụ: (int*)).
 Dưới đây là sự so sánh giống nhau và khác nhau giữa ba hàm malloc, calloc, và realloc:
-Giống nhau:
-1.	Quản lý bộ nhớ động:
-o	Cả ba hàm đều được sử dụng để cấp phát hoặc điều chỉnh bộ nhớ động trong ngôn ngữ lập trình C.
-o	Đều trả về một con trỏ đến vùng nhớ được cấp phát, hoặc NULL nếu việc cấp phát không thành công.
-2.	Yêu cầu giải phóng bộ nhớ:
-o	Bộ nhớ cấp phát bởi malloc, calloc, và realloc cần được giải phóng bằng hàm free() để tránh rò rỉ bộ nhớ.
-3.	Cần ép kiểu con trỏ:
-o	Hàm trả về một con trỏ kiểu void*, do đó cần ép kiểu về loại dữ liệu mong muốn (ví dụ: (int*)).
-________________________________________
-Khác nhau:
+
+## Khác nhau:
 malloc: Cấp phát bộ nhớ nhưng không khởi tạo giá trị.
 calloc: Cấp phát bộ nhớ và khởi tạo tất cả các giá trị về 0.
 realloc: Điều chỉnh kích thước vùng nhớ đã được cấp phát trước đó, giữ nguyên dữ liệu cũ.
