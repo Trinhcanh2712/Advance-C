@@ -1,1 +1,38 @@
+# So sánh malloc, realloc, calloc giống và khác nhau
+Giống nhau:
+1.	Quản lý bộ nhớ động:
+o	Cả ba hàm đều được sử dụng để cấp phát hoặc điều chỉnh bộ nhớ động trong ngôn ngữ lập trình C.
+o	Đều trả về một con trỏ đến vùng nhớ được cấp phát, hoặc NULL nếu việc cấp phát không thành công.
+2.	Yêu cầu giải phóng bộ nhớ:
+o	Bộ nhớ cấp phát bởi malloc, calloc, và realloc cần được giải phóng bằng hàm free() để tránh rò rỉ bộ nhớ.
+3.	Cần ép kiểu con trỏ:
+o	Hàm trả về một con trỏ kiểu void*, do đó cần ép kiểu về loại dữ liệu mong muốn (ví dụ: (int*)).
+Dưới đây là sự so sánh giống nhau và khác nhau giữa ba hàm malloc, calloc, và realloc:
+Giống nhau:
+1.	Quản lý bộ nhớ động:
+o	Cả ba hàm đều được sử dụng để cấp phát hoặc điều chỉnh bộ nhớ động trong ngôn ngữ lập trình C.
+o	Đều trả về một con trỏ đến vùng nhớ được cấp phát, hoặc NULL nếu việc cấp phát không thành công.
+2.	Yêu cầu giải phóng bộ nhớ:
+o	Bộ nhớ cấp phát bởi malloc, calloc, và realloc cần được giải phóng bằng hàm free() để tránh rò rỉ bộ nhớ.
+3.	Cần ép kiểu con trỏ:
+o	Hàm trả về một con trỏ kiểu void*, do đó cần ép kiểu về loại dữ liệu mong muốn (ví dụ: (int*)).
+________________________________________
+Khác nhau:
+malloc: Cấp phát bộ nhớ nhưng không khởi tạo giá trị.
+calloc: Cấp phát bộ nhớ và khởi tạo tất cả các giá trị về 0.
+realloc: Điều chỉnh kích thước vùng nhớ đã được cấp phát trước đó, giữ nguyên dữ liệu cũ.
+Sự khác biệt lớn nhất giữa malloc và calloc là cách chúng khởi tạo vùng nhớ, còn realloc là để thay đổi kích thước bộ nhớ đã cấp phát.
+
+# So sánh phân vùng stack và heap
+•	Stack là vùng bộ nhớ dùng để quản lý các biến cục bộ, tham số hàm và lưu trữ các khung hàm khi chúng được gọi. Bộ nhớ trên stack được quản lý tự động theo cơ chế LIFO (Last In, First Out). Điều này có nghĩa là khi một hàm được gọi, một khung hàm mới sẽ được "đẩy" vào stack và khi hàm kết thúc, khung hàm đó sẽ được "pop" ra ngoài. Stack có tốc độ truy cập nhanh hơn vì quá trình cấp phát và giải phóng bộ nhớ rất đơn giản. Tuy nhiên, kích thước của stack thường bị giới hạn và cố định. Nếu chương trình sử dụng quá nhiều bộ nhớ cục bộ (ví dụ như đệ quy quá sâu), có thể gây ra lỗi stack overflow (tràn stack). Bộ nhớ trên stack thường chỉ tồn tại trong thời gian hàm đang chạy, và biến cục bộ sẽ bị giải phóng khi hàm kết thúc.
+•	Heap là vùng bộ nhớ dùng để cấp phát bộ nhớ động trong quá trình chương trình chạy. Bộ nhớ trên heap được cấp phát và giải phóng thủ công bởi lập trình viên thông qua các hàm như malloc, calloc, và free trong ngôn ngữ C. Heap cho phép cấp phát bộ nhớ với kích thước linh hoạt, có thể mở rộng và không bị giới hạn như stack. Tuy nhiên, quản lý bộ nhớ trên heap phức tạp hơn, và nếu không giải phóng đúng cách, có thể dẫn đến lỗi memory leak (rò rỉ bộ nhớ). Ngoài ra, vì không có cấu trúc quản lý chặt chẽ như stack, việc truy cập vào heap có thể chậm hơn. Bộ nhớ trên heap tồn tại cho đến khi được giải phóng thủ công, nghĩa là các đối tượng trên heap có thể tồn tại lâu dài ngay cả sau khi hàm chứa chúng đã kết thúc.
+
+
+
+
+
+
+
+
+
 
