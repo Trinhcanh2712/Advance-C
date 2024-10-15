@@ -142,5 +142,31 @@ Stack (dành cho biến cục bộ và khung hàm).
 •	Quyền truy cập là đọc và ghi, tức là có thể đọc và thay đổi giá trị của biến .
 •	Tất cả các biến sẽ được thu hồi sau khi chương trình kết thúc.
 
+## STACK-QUEUE
+### stack
+	Tuân thủ theo nguyên tắc LIFO “last in, first out”
+ 3 thao tac chính:
+•	Push: tạo 1 phần tử vào đỉnh của stack
+•	Pop: để xóa 1 phần tử ở đỉnh stack
+•	Top: để lấy giá trị phần tử ở đỉnh stack
+           push -> top++
+           pop -> top—
+           maxtop = size – 1
+	Cách nhận biết stack đầy: => top = size – 1
+	Cách nhận biết stack rỗng: => top = -1
+	Tạo stack gồm 3 phần: *items; size; top
+	Địa chỉ của staack cũng là địa chỉ của phần tử đầu tiên được đưa vào
+
+ ### queue
+ Tuân thủ theo nguyên tắc FIFO: First in, First out ( thêm vào cuối và xóa ở đầu)
+ Khi khởi tạo queue cần lưu ý: 
+     front = -1
+     rear = -1
+  exqueue: rear tăng dần
+  dequeue: front tăng dần
+  max_front = max_rear = size - 1 
+ 2 loại vòng đời:
+•	Linear queue: chỉ khi front = rear thì mới có thể thêm phần tử vào
+•	Cỉcular: đưa rear từ phần tử cuối đến ô trống
 
 
