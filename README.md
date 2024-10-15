@@ -105,7 +105,7 @@ Truy cập độc lập: Tại một thời điểm, chỉ một thành viên c�
 #### e. Ứng dụng của union
 union thường được sử dụng trong các hệ thống nhúng hoặc các tình huống mà bạn cần tiết kiệm bộ nhớ và chỉ cần lưu trữ một loại dữ liệu tại một thời điểm.
 
-## Memory Layout
+## BÀI 5: Memory Layout
 Chương trình main.exe ( trên window), main.hex ( nạp vào vi điều khiển) được lưu ở bộ nhớ SSD hoặc FLASH. Khi nhấn run chương trình trên window ( cấp nguồn cho vi điều khiển) thì những chương trình này sẽ được copy vào bộ nhớ RAM để thực thi.
 Thứ tự sắp xếp:
 Text Segment (chứa code).
@@ -142,7 +142,7 @@ Stack (dành cho biến cục bộ và khung hàm).
 •	Quyền truy cập là đọc và ghi, tức là có thể đọc và thay đổi giá trị của biến .
 •	Tất cả các biến sẽ được thu hồi sau khi chương trình kết thúc.
 
-## STACK-QUEUE
+## BÀI 6: STACK-QUEUE
 ### stack
 	Tuân thủ theo nguyên tắc LIFO “last in, first out”
  3 thao tac chính:
@@ -169,4 +169,29 @@ Stack (dành cho biến cục bộ và khung hàm).
 •	Linear queue: chỉ khi front = rear thì mới có thể thêm phần tử vào
 •	Cỉcular: đưa rear từ phần tử cuối đến ô trống
 
+## BÀI 7: JSON
+Json: 
+•	phổ biến trong việc giao tiếp của máy chủ và trình duyệt
+•	Được dùng cho các kiểu dữ liệu phức tạp
+Json gồm các key value
+•	Key: phải là chuỗi -> string
+•	Value: bất kì là kiểu dữ liệu nào
+•	Ngăn cách giữa key và value lầ dấu ;
+•	Ngăn cách giữa các key value là dấu ,
+Khi làm việc với Array cần quan tâm:
+•	Kiểu dữ liệu
+•	Count: đếm số lượng phần tử trong mảng
+Khi làm việc với object:
+•	Key: khai báo kiểu char** key
+•	value: struct JSON value *value
+•	bao nhiêu cặp key value trong object: size_count
+“\”str1\”, \”str2\””;  => khai báo chuối trong chuỗi
+Để lưu được key value cần cấp phát vùng nhớ.
 
+## BÀI 8: LINKED LIST
+•	Là một chuỗi gồm các nút (node)
+•	Danh sách liên kết đơn (Singly Linked List): Mỗi phần tử chứa một con trỏ đến phần tử tiếp theo.
+   Mỗi phần tử trong danh sách liên kết có hai phần:
+•	Dữ liệu: Phần lưu trữ giá trị của phần tử.(data)
+•	Con trỏ: Phần lưu trữ địa chỉ của phần tử tiếp theo (hoặc phần tử trước trong danh sách liên kết đôi).(*next)
+   Danh sách liên kết không có hàm kiểm tra list có đầy hay không vì phần tử có thể được đưa vào liên tục.
