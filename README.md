@@ -126,7 +126,7 @@ Stack (dành cho biến cục bộ và khung hàm).
 •	Quyền truy cập là đọc và ghi
 •	Tất cả các biến sẽ được thu hồi sau khi chương trình kết thúc
 
-c.	Uninitialized Data Segment (BSS Segment):
+### c.	Uninitialized Data Segment (BSS Segment):
 •	Chứa các biến toàn cục hoặc biến tĩnh nhưng chưa được khởi tạo, còn gọi là BSS (Block Started by Symbol). Khi chương trình chạy, những biến này sẽ được khởi tạo bằng 0.
 •	Quyền truy cập là đọc và ghi, tức là có thể đọc và thay đổi giá trị của biến .
 •	Tất cả các biến sẽ được thu hồi sau khi chương trình kết thúc.
