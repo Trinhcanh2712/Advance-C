@@ -1,4 +1,34 @@
 # Advance-C
+## BÀI 1 COMPILER
+### Compiler
+1.Compiler là một phần mềm nhận vào mã nguồn (source code) của một chương trình, thường viết bằng ngôn ngữ lập trình cấp cao (như C), và dịch nó thành mã máy hoặc bytecode mà máy tính hoặc máy ảo có thể thực thi
+Tạo file.i
+gcc -E main.c -o main.i
+Quá trình tạo ra file.i gọi là tiền xử lý và nó thực hiện 4 công việc:
+•	Copy toàn bộ những cái source của những file thêm vào
+•	Xóa bỏ những comand
+•	Thay thế vào những định nghĩa sử dụng define
+•	Giữ nguyên những biến và hàm
+2. Macro
+a. Loại 1: 
+Include: chỉ thị bào hàm tệp
+Có 2 loại: 
+•	Include<...>: được sử dụng cho thư viện được C++ viết sẵn.
+•	Include”...”: tìm kiếm trong thư mục hiện tại file nào là file cần tìm sau đó nó sẽ copy toàn bộ source code. 
+b. Loại 2
+define: chỉ thị định nghĩa cho phép thay thế một chuỗi mã nguồn thành một chuỗi khác tránh được nhiều mã nguồn giống nhau giúp fix lỗi dễ hơn.
+Ex:
+•	#define merge(x, y)   x ## y
+                 ## : dùng để nối hay chuỗi
+•	#define CREATE_STRING(cmd)   printf(#end)
+#: dùng để chuẩn hóa 1 đoạn văn bản lên thành chuỗi
+### Variadic
+
+
+
+
+
+
 ## BÀI 1 Pointer
 ### Pointer
 Là 1 biến chứa địa chỉ của 1 biến khác hay 1 hàm. Kích thước của con trỏ phụ thuộc vào kiến trúc máy tính và trình biên dịch. 
