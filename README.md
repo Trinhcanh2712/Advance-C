@@ -104,3 +104,43 @@ Chia sẻ bộ nhớ: Kích thước của union bằng kích thước của th�
 Truy cập độc lập: Tại một thời điểm, chỉ một thành viên có thể lưu trữ giá trị có ý nghĩa. Nếu bạn gán giá trị cho thành viên khác, giá trị của thành viên trước sẽ bị ghi đè.
 #### e. Ứng dụng của union
 union thường được sử dụng trong các hệ thống nhúng hoặc các tình huống mà bạn cần tiết kiệm bộ nhớ và chỉ cần lưu trữ một loại dữ liệu tại một thời điểm.
+
+## Memory Layout
+Chương trình main.exe ( trên window), main.hex ( nạp vào vi điều khiển) được lưu ở bộ nhớ SSD hoặc FLASH. Khi nhấn run chương trình trên window ( cấp nguồn cho vi điều khiển) thì những chương trình này sẽ được copy vào bộ nhớ RAM để thực thi.
+Thứ tự sắp xếp:
+Text Segment (chứa code).
+Data Segment (chứa biến toàn cục đã khởi tạo và chưa khởi tạo).
+Bss 
+Heap (dành cho cấp phát động).
+Stack (dành cho biến cục bộ và khung hàm).
+
+### a. Text Segment (Code Segment)
+•	Chứa mã lệnh của chương trình (machine code).
+•	Đây là nơi chứa tất cả các hàm và mã chương trình thực thi được.
+•	Quyền truy cập: Text Segment thường có quyền đọc và thực thi, nhưng không có quyền ghi.
+•	Lưu hằng số, con trỏ kiểu char
+•	Tất cả các biến lưu ở phần vùng Text đều không thể thay đổi giá trị mà chỉ được đọc.
+
+### b.	Initialized Data Segment: 
+•	Chứa các biến toàn cục hoặc biến tĩnh (global/static) đã được khởi tạo.
+•	Quyền truy cập là đọc và ghi
+•	Tất cả các biến sẽ được thu hồi sau khi chương trình kết thúc
+
+c.	Uninitialized Data Segment (BSS Segment):
+•	Chứa các biến toàn cục hoặc biến tĩnh nhưng chưa được khởi tạo, còn gọi là BSS (Block Started by Symbol). Khi chương trình chạy, những biến này sẽ được khởi tạo bằng 0.
+•	Quyền truy cập là đọc và ghi, tức là có thể đọc và thay đổi giá trị của biến .
+•	Tất cả các biến sẽ được thu hồi sau khi chương trình kết thúc.
+
+### d. Heap
+•	Dùng để lưu trữ các đối tượng hoặc biến được cấp phát động (dynamic allocation) trong thời gian chạy, ví dụ như malloc(),...
+•	Heap được sử dụng để cấp phát bộ nhớ động trong quá trình thực thi của chương trình.
+•	Các hàm như malloc(), calloc(), realloc(), và free() được sử dụng để cấp phát và giải phóng bộ nhớ trên heap.
+### e. Stack
+•	Lưu các biếncục bộ (local variables) và các tham số của hàm ngoại trừ static cục bộ.
+•	Stack phát triển từ trên xuống dưới (từ địa chỉ cao đến địa chỉ thấp).
+•	Kích thước stack thường bị giới hạn và có thể dẫn đến lỗi "stack overflow" nếu vượt quá giới hạn.
+•	Quyền truy cập là đọc và ghi, tức là có thể đọc và thay đổi giá trị của biến .
+•	Tất cả các biến sẽ được thu hồi sau khi chương trình kết thúc.
+
+
+
